@@ -13,7 +13,7 @@ import java.util.Objects;
 @Table(name="nacin_placanja")
 public class NacinPlacanja {
     @Id
-    @Column(length = 5)
+    @Column(length = 5,name="id_nacina_placanja")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idNacinaPlacanja;
     @Column(length = 50)

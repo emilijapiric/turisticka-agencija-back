@@ -14,7 +14,7 @@ import java.util.Objects;
 @Table(name="obavestenje_o_izvrsenoj_uplati_prevoza")
 public class ObavestenjeOIzvrsenojUplatiPrevoza {
     @Id
-    @Column(length = 5)
+    @Column(length = 5,name="id_obavestenja_prevoza")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idObavestenjaPrevoza;
     private LocalDate datumP;

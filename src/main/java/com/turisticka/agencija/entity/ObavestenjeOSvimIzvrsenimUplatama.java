@@ -17,7 +17,7 @@ import java.util.Objects;
 @Table(name = "obavestenje_o_svim_izvrsenim_uplatama")
 public class ObavestenjeOSvimIzvrsenimUplatama {
     @Id
-    @Column(length = 5)
+    @Column(length = 5,name="id_obavestenja")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idObavestenja;
     @Column(length = 100)

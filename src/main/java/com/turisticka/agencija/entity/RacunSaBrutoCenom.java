@@ -19,7 +19,7 @@ import java.util.Objects;
 @Table(name="racun")
 public class RacunSaBrutoCenom {
     @Id
-    @Column(length = 5)
+    @Column(length = 5,name="br_racuna")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int brRacuna;
     @Column(length = 30)
@@ -35,7 +35,7 @@ public class RacunSaBrutoCenom {
     @JoinColumn(name = "id_mesta_izdavanja")
     private MestoIzdavanja mestoIzdavanja;
     private LocalDate datumIzdavanja;
-    @OneToMany(mappedBy = "stavka_racuna", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "rBr", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<StavkaRacuna> stavkeRacuna;
     @Column(length = 5)
     private double ukupnaBrutoCena;
