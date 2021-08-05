@@ -1,0 +1,1 @@
+INSERT INTO racun(datum_izdavanja, osnova, rok_placanja, ukupna_bruto_cena, id_mesta_izdavanja, id_nacina_placanja, sifra_radnika) VALUES ("2021-08-08","Osnova1","2021-09-08",1700.0,1,1,1)

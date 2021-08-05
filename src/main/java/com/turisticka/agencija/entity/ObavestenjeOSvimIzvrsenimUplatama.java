@@ -31,10 +31,13 @@ public class ObavestenjeOSvimIzvrsenimUplatama {
     @JoinColumn(name = "sifra_radnika", referencedColumnName = "sifra_radnika")
     private Radnik radnik;
     @OneToOne
+    @JoinColumn(name = "id_obavestenja_hotela")
     private ObavestenjeOIzvrsenojUplatiHotela obavestenjeOIzvrsenojUplatiHotela;
     @OneToOne
+    @JoinColumn(name = "id_obavestenja_prevoza")
     private ObavestenjeOIzvrsenojUplatiPrevoza obavestenjeOIzvrsenojUplatiPrevoza;
     @OneToOne
+    @JoinColumn(name = "id_obavestenja_osiguranja")
     private ObavestenjeOIzvrsenojUplatiOsiguranja obavestenjeOIzvrsenojUplatiOsiguranja;
 
     public ObavestenjeOSvimIzvrsenimUplatama(int idObavestenja, String svrhaObavestenja, LocalDate datum, Korisnik korisnik, Radnik radnik, ObavestenjeOIzvrsenojUplatiHotela obavestenjeOIzvrsenojUplatiHotela, ObavestenjeOIzvrsenojUplatiPrevoza obavestenjeOIzvrsenojUplatiPrevoza, ObavestenjeOIzvrsenojUplatiOsiguranja obavestenjeOIzvrsenojUplatiOsiguranja) {

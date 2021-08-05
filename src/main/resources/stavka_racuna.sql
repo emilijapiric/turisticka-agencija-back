@@ -1,0 +1,2 @@
+INSERT INTO stavka_racuna(bruto_cena, marza, naziv_stavke, neto_cena,br_racuna) VALUES (1000.00,0.1,"Stavka 1",900.0,1);
+INSERT INTO stavka_racuna(bruto_cena, marza, naziv_stavke, neto_cena,br_racuna) VALUES (700.00,0.2,"Stavka 2",500.0,1)

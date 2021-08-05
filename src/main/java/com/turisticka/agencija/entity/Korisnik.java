@@ -12,8 +12,8 @@ import java.util.Objects;
 @Table(name="korisnik")
 public class Korisnik {
     @Id
-    @Column(length = 10)
-    private int jmbg;
+    @Column(length = 13)
+    private String jmbg;
     @Column(length = 30)
     @NotNull
     private String imePrezimeK;
@@ -24,7 +24,7 @@ public class Korisnik {
     @NotNull
     private String brTelefona;
 
-    public Korisnik(int jmbg, String imePrezimeK, int brPasosa, LocalDate datumRodj, String brTelefona) {
+    public Korisnik(String jmbg, String imePrezimeK, int brPasosa, LocalDate datumRodj, String brTelefona) {
         this.jmbg = jmbg;
         this.imePrezimeK = imePrezimeK;
         this.brPasosa = brPasosa;
@@ -35,11 +35,11 @@ public class Korisnik {
     public Korisnik() {
     }
 
-    public int getJmbg() {
+    public String getJmbg() {
         return jmbg;
     }
 
-    public void setJmbg(int jmbg) {
+    public void setJmbg(String jmbg) {
         this.jmbg = jmbg;
     }
 
@@ -91,7 +91,7 @@ public class Korisnik {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Korisnik korisnik = (Korisnik) o;
-        return jmbg == korisnik.jmbg && brPasosa == korisnik.brPasosa && Objects.equals(imePrezimeK, korisnik.imePrezimeK) && Objects.equals(datumRodj, korisnik.datumRodj) && Objects.equals(brTelefona, korisnik.brTelefona);
+        return Objects.equals(jmbg, korisnik.jmbg) && brPasosa == korisnik.brPasosa && Objects.equals(imePrezimeK, korisnik.imePrezimeK) && Objects.equals(datumRodj, korisnik.datumRodj) && Objects.equals(brTelefona, korisnik.brTelefona);
     }
 
     @Override

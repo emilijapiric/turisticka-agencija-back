@@ -1,0 +1,2 @@
+INSERT INTO obavestenje_o_izvrsenoj_uplati_osiguranja(datumo,svrha_obavestenjao) VALUES("2021-05-12","Putno osiguranje za jednu osobu")
+INSERT INTO obavestenje_o_izvrsenoj_uplati_osiguranja(datumo,svrha_obavestenjao) VALUES("2021-06-07","Porodicno osiguranje")

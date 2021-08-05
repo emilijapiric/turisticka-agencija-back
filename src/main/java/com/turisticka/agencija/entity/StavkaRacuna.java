@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
@@ -25,13 +27,17 @@ public class StavkaRacuna {
     private double marza;
     @Column(length = 5)
     private double brutoCena;
+    @ManyToOne
+    @JoinColumn(name = "br_racuna")
+    private RacunSaBrutoCenom racunSaBrutoCenom;
 
-    public StavkaRacuna(int rBr, String nazivStavke, double netoCena, double marza, double brutoCena) {
+    public StavkaRacuna(int rBr, String nazivStavke, double netoCena, double marza, double brutoCena, RacunSaBrutoCenom racunSaBrutoCenom) {
         this.rBr = rBr;
         this.nazivStavke = nazivStavke;
         this.netoCena = netoCena;
         this.marza = marza;
         this.brutoCena = brutoCena;
+        this.racunSaBrutoCenom = racunSaBrutoCenom;
     }
 
     public StavkaRacuna() {
@@ -77,6 +83,14 @@ public class StavkaRacuna {
         this.brutoCena = brutoCena;
     }
 
+    public RacunSaBrutoCenom getRacunSaBrutoCenom() {
+        return racunSaBrutoCenom;
+    }
+
+    public void setRacunSaBrutoCenom(RacunSaBrutoCenom racunSaBrutoCenom) {
+        this.racunSaBrutoCenom = racunSaBrutoCenom;
+    }
+
     @Override
     public String toString() {
         return "StavkaRacuna{" +
@@ -85,6 +99,7 @@ public class StavkaRacuna {
                 ", netoCena=" + netoCena +
                 ", marza=" + marza +
                 ", brutoCena=" + brutoCena +
+                ", racunSaBrutoCenom=" + racunSaBrutoCenom +
                 '}';
     }
 
@@ -93,11 +108,11 @@ public class StavkaRacuna {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StavkaRacuna that = (StavkaRacuna) o;
-        return rBr == that.rBr && Double.compare(that.netoCena, netoCena) == 0 && Double.compare(that.marza, marza) == 0 && Double.compare(that.brutoCena, brutoCena) == 0 && Objects.equals(nazivStavke, that.nazivStavke);
+        return rBr == that.rBr && Double.compare(that.netoCena, netoCena) == 0 && Double.compare(that.marza, marza) == 0 && Double.compare(that.brutoCena, brutoCena) == 0 && Objects.equals(nazivStavke, that.nazivStavke) && Objects.equals(racunSaBrutoCenom, that.racunSaBrutoCenom);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rBr, nazivStavke, netoCena, marza, brutoCena);
+        return Objects.hash(rBr, nazivStavke, netoCena, marza, brutoCena, racunSaBrutoCenom);
     }
 }

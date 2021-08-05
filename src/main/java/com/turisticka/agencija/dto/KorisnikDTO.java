@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public class KorisnikDTO implements MyDTO {
     private static final long serialVersionUID = 1L;
-    @Max(10)
-    private int jmbg;
+    @Max(13)
+    private String jmbg;
     @Max(30)
     @NotNull
     private String imePrezimeK;
@@ -19,7 +19,7 @@ public class KorisnikDTO implements MyDTO {
     @NotNull
     private String brTelefona;
 
-    public KorisnikDTO(int jmbg, String imePrezimeK, int brPasosa, LocalDate datumRodj, String brTelefona) {
+    public KorisnikDTO(String jmbg, String imePrezimeK, int brPasosa, LocalDate datumRodj, String brTelefona) {
         this.jmbg = jmbg;
         this.imePrezimeK = imePrezimeK;
         this.brPasosa = brPasosa;
@@ -30,11 +30,11 @@ public class KorisnikDTO implements MyDTO {
     public KorisnikDTO() {
     }
 
-    public int getJmbg() {
+    public String getJmbg() {
         return jmbg;
     }
 
-    public void setJmbg(int jmbg) {
+    public void setJmbg(String jmbg) {
         this.jmbg = jmbg;
     }
 
@@ -86,7 +86,7 @@ public class KorisnikDTO implements MyDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         KorisnikDTO korisnik = (KorisnikDTO) o;
-        return jmbg == korisnik.jmbg && brPasosa == korisnik.brPasosa && Objects.equals(imePrezimeK, korisnik.imePrezimeK) && Objects.equals(datumRodj, korisnik.datumRodj) && Objects.equals(brTelefona, korisnik.brTelefona);
+        return Objects.equals(jmbg, korisnik.jmbg) && brPasosa == korisnik.brPasosa && Objects.equals(imePrezimeK, korisnik.imePrezimeK) && Objects.equals(datumRodj, korisnik.datumRodj) && Objects.equals(brTelefona, korisnik.brTelefona);
     }
 
     @Override

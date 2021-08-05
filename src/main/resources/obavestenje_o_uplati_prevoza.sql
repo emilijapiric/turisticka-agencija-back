@@ -1,0 +1,2 @@
+INSERT INTO obavestenje_o_izvrsenoj_uplati_prevoza(datump,svrha_obavestenjap) VALUES("2021-05-12","Rezervisana 2 sedista")
+INSERT INTO obavestenje_o_izvrsenoj_uplati_prevoza(datump,svrha_obavestenjap) VALUES("2021-06-07","Rezervisana 3 sedista")
